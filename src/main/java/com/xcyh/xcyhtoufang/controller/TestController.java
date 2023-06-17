@@ -5,12 +5,16 @@ import com.xcyh.xcyhtoufang.pojo.Test001;
 import com.xcyh.xcyhtoufang.service.TestService001;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/test")
@@ -29,7 +33,6 @@ public class TestController {
     @RequestMapping(value = "/getTest001")
     public String getTest001(HttpServletRequest request) {
 
-        String aaa = "";
         String idStr = request.getParameter("id");
         Integer id = null;
         if(StringUtils.isNotBlank(idStr)){
@@ -53,6 +56,27 @@ public class TestController {
 //        System.out.println(StringUtils.join(records, '\n'));
 
         return null;
+    }
+
+
+    /**
+     *
+     * 获取某本书的变动章节
+     *
+     * @param request
+     * @return
+     */
+    @GetMapping(value = "/getTest002")
+    public ModelAndView getTest002(HttpServletRequest request) {
+
+        String idStr = request.getParameter("id");
+        String name = request.getParameter("name");
+
+        ModelAndView modelAndView = new ModelAndView("test/test");
+        modelAndView.addObject("id",idStr);
+        modelAndView.addObject("name",name);
+
+        return modelAndView;
     }
 
     /**
