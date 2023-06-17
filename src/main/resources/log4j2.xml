@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<properties>
+	<Property name="LOG_HOME">/ty/original-canal/logs</Property>
+	<!-- 文件输出格式 -->
+	<property name="PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] %msg%n</property>
+	<!-- 文件没有日期输出格式 -->
+	<property name="NO_DATA_PATTERN">%msg%n</property>
+</properties>
+
+<appenders>
+	<Console name="Console" target="system_out">
+		<PatternLayout pattern="${PATTERN}" />
+	</Console>
+
+	<RollingFile name="errorRolling" fileName="${LOG_HOME}/tadu-error.log"
+				 filePattern="${LOG_HOME}/tadu-error-%d{yyyyMMdd}.log">
+		<PatternLayout charset="UTF-8" pattern="${PATTERN}" />
+		<Policies>
+			<!--按时间分割,interval代表间隔,单位是filePattern中的最小值,上面就代表每天 -->
+			<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+		</Policies>
+	</RollingFile>
+
+	<RollingFile name="consoleRolling" fileName="${LOG_HOME}/tadu-console.log"
+				 filePattern="${LOG_HOME}/tadu-console-%d{yyyyMMdd}.log">
+		<PatternLayout charset="UTF-8" pattern="${PATTERN}" />
+		<Policies>
+			<!--按时间分割,interval代表间隔,单位是filePattern中的最小值,上面就代表每天 -->
+			<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+		</Policies>
+	</RollingFile>
+
+
+</appenders>
+
+<loggers>
+
+
+	<logger name="consoleLog" level="INFO" additivity="false">
+		<appender-ref ref="consoleRolling" />
+	</logger>
+
+	<logger name="errorLog" level="INFO" additivity="false">
+		<appender-ref ref="errorRolling" />
+	</logger>
+
+	<!-- Mongodb日志输出 -->
+	<logger name="org.mongodb.driver" level="error"/>
+
+
+	<root level="info">
+		<appenderref ref="Console" />
+	</root>
+</loggers>
+
+</configuration>
