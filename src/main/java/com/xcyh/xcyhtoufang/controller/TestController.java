@@ -29,6 +29,7 @@ public class TestController {
     @RequestMapping(value = "/getTest001")
     public String getTest001(HttpServletRequest request) {
 
+        String aaa = "";
         String idStr = request.getParameter("id");
         Integer id = null;
         if(StringUtils.isNotBlank(idStr)){
