@@ -20,7 +20,7 @@ public class KafkaConsumerListener {
      * @param records 消息列表
      * @param ack 消息消费后提交
      */
-    @KafkaListener(topics = "${kafka.consumer.topic.name}", containerFactory = "kafkaListenerContainerFactory")
+    //@KafkaListener(topics = "${kafka.consumer.topic.name}", containerFactory = "kafkaListenerContainerFactory")
     public void userConsumer(List<ConsumerRecord<String, String>> records, Acknowledgment ack) {
         try {
             for (ConsumerRecord<String, String> record : records) {
