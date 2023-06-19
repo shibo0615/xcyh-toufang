@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -67,6 +68,7 @@ public class TestController {
      * @return
      */
     @GetMapping(value = "/getTest002")
+    @ResponseBody
     public ModelAndView getTest002(HttpServletRequest request) {
 
         String idStr = request.getParameter("id");
