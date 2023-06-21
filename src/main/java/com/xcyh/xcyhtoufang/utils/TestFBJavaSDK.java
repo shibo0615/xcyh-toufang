@@ -15,7 +15,7 @@ public class TestFBJavaSDK {
     );
     public void test()
     {
-        AdAccount account = new AdAccount("act_{3355738908088004}", context);
+        AdAccount account = new AdAccount("act_3355738908088004", context);
         try {
             APINodeList<Campaign> campaigns = account.getCampaigns().requestAllFields().execute();
             for(Campaign campaign : campaigns) {
