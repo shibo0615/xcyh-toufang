@@ -3,6 +3,7 @@ package com.xcyh.xcyhtoufang.controller;
 import com.alibaba.fastjson.JSON;
 import com.xcyh.xcyhtoufang.pojo.Test001;
 import com.xcyh.xcyhtoufang.service.TestService001;
+import com.xcyh.xcyhtoufang.utils.QuickStartExample;
 import com.xcyh.xcyhtoufang.utils.TestFBJavaSDK;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,10 @@ public class TestController {
             id = Integer.parseInt(idStr);
         }
         Test001 test001 = testService001.getTest001(id);
+
+        QuickStartExample quickStartExample = new QuickStartExample();
+        quickStartExample.test();
+
 
         TestFBJavaSDK testFBJavaSDK = new TestFBJavaSDK();
         testFBJavaSDK.test();
