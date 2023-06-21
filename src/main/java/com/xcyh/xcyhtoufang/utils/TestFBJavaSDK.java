@@ -9,8 +9,9 @@ import com.facebook.ads.sdk.Campaign;
 public class TestFBJavaSDK {
 
     public static final APIContext context = new APIContext(
-            "EAARLnLxSsWMBAGdPSqDmpgnNtOLvjBOWr1cb5ZBYZA5IwP1A0drZBvmw8NkifqkUaxi66hMVqERXAic2w14LoRqId3r3wd5sNTR94HfaZCqR4tInmAPIs4Dx18NSHExoHBd9mNz9NwQILnsMdps0WPX0WeG4IDBZCDCX2ME2OS9mBeIqI8Xd7",
-            "31303a5a92a1c74cb867bfffb9f8a737d64bd12607d618c0d5dd9224ec0dfe24"
+            "EAARLnLxSsWMBALZAfhSED9ohqGNEw7cpTxUzPMnGBUDljZCoKBPFXdUkVFguUUGouSTRrbyVs7evDNB6ZCqf9iJO3qyTZCVKMldC4LKF5ZBKsNUvCqRrmCIxDLt8ZCJfAdYLmExraAiX6PE6c9CdE9kzU3OCRwlvPQx47ApucuSuZB5UZB0f8mun",
+            "31303a5a92a1c74cb867bfffb9f8a737d64bd12607d618c0d5dd9224ec0dfe24",
+            "1209036453359971"
     );
     public void test()
     {
